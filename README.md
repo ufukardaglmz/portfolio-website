@@ -41,7 +41,7 @@ https://ufukardagulmez.page.gd/
 
 ## GitHub Repository
 
-Add your GitHub repository link here.
+https://github.com/ufukardaglmz/portfolio-website
 
 ## Author
 
