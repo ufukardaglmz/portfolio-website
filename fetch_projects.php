@@ -1,12 +1,6 @@
 <?php
 
-$conn = new mysqli(
-    "sql110.infinityfree.com",
-    "if0_41903100",
-    "Kibar25202933",
-    "if0_41903100_portfolio_db"
-);
-
+include "config.php";
 $sql = "SELECT * FROM projects";
 
 $result = $conn->query($sql);

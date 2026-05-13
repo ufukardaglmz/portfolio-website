@@ -2,12 +2,7 @@
 
 session_start();
 
-$conn = new mysqli(
-    "sql110.infinityfree.com",
-    "if0_41903100",
-    "Kibar25202933",
-    "if0_41903100_portfolio_db"
-);
+include "config.php";
 if($_SERVER["REQUEST_METHOD"] == "POST"){
 
     $username = $_POST["username"];
