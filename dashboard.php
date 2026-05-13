@@ -72,6 +72,47 @@ while($row = $result->fetch_assoc()){
 <a href="logout.php">
     Logout
 </a>
+<h2>Messages</h2>
+
+<table>
+
+<tr>
+
+    <th>Name</th>
+    <th>Email</th>
+    <th>Message</th>
+
+</tr>
+
+<?php
+
+include "config.php";
+
+$sql = "SELECT * FROM contacts";
+
+$result = $conn->query($sql);
+
+while($row = $result->fetch_assoc()){
+
+?>
+
+<tr>
+
+    <td><?php echo $row['name']; ?></td>
+
+    <td><?php echo $row['email']; ?></td>
+
+    <td><?php echo $row['message']; ?></td>
+
+</tr>
+
+<?php
+
+}
+
+?>
+
+</table>
 
     </section>
 
