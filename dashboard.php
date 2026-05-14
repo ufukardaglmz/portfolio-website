@@ -6,30 +6,37 @@ if(!isset($_SESSION["admin"])){
 
     header("Location: login.php");
 
+    exit();
+
 }
+
+include "config.php";
 
 ?>
 
 <!DOCTYPE html>
+
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <title>Dashboard</title>
 
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+
+<title>Dashboard</title>
+
+<link rel="stylesheet" href="style.css">
+
 </head>
 
 <body>
 
-    <section class="projects">
+<section class="projects">
 
-        <h2>Admin Dashboard</h2>
+<h2>Admin Dashboard</h2>
 
-        <p>Welcome <?php echo $_SESSION["admin"]; ?></p>
-        <?php
+<p>Welcome Admin</p>
 
-include "config.php";
+<?php
 
 $sql = "SELECT * FROM projects";
 
@@ -39,55 +46,64 @@ while($row = $result->fetch_assoc()){
 
 ?>
 
-    <div class="project-card">
+<div class="project-card">
 
-        <h3><?php echo $row["title"]; ?></h3>
+<h3><?php echo $row["title"]; ?></h3>
 
-        <p><?php echo $row["description"]; ?></p>
-        <a href="edit_project.php?id=<?php echo $row['id']; ?>">
-            Edit
-        </a>
+<p><?php echo $row["description"]; ?></p>
 
-        <br><br>
+<a href="edit_project.php?id=<?php echo $row['id']; ?>">
 
-        <a href="delete_project.php?id=<?php echo $row['id']; ?>">
-            Delete
-        </a>
+Edit
 
-    </div>
+</a>
+
+<br><br>
+
+<a href="delete_project.php?id=<?php echo $row['id']; ?>">
+
+Delete
+
+</a>
+
+</div>
 
 <?php
 
 }
 
 ?>
-        <br><br>
+
+<br><br>
 
 <a href="add_project.php">
-    Add Project
+
+Add Project
+
 </a>
 
 <br><br>
 
 <a href="logout.php">
-    Logout
+
+Logout
+
 </a>
+
 <h2>Messages</h2>
 
 <table>
 
 <tr>
 
-    <th>Name</th>
-    <th>Email</th>
-    <th>Message</th>
-    <th>Action</th>
+<th>Name</th>
+<th>Email</th>
+<th>Message</th>
+<th>Action</th>
 
 </tr>
 
 <?php
-
-include "config.php";
 
 $sql = "SELECT * FROM contacts";
 
@@ -99,18 +115,19 @@ while($row = $result->fetch_assoc()){
 
 <tr>
 
-    <td><?php echo $row['name']; ?></td>
+<td><?php echo $row['name']; ?></td>
 
-    <td><?php echo $row['email']; ?></td>
+<td><?php echo $row['email']; ?></td>
 
-    <td><?php echo $row['message']; ?></td>
-    <td>
+<td><?php echo $row['message']; ?></td>
 
-    <a href="delete_message.php?id=<?php echo $row['id']; ?>">
+<td>
 
-        Delete
+<a href="delete_message.php?id=<?php echo $row['id']; ?>">
 
-    </a>
+Delete
+
+</a>
 
 </td>
 
@@ -124,7 +141,8 @@ while($row = $result->fetch_assoc()){
 
 </table>
 
-    </section>
+</section>
 
 </body>
+
 </html>

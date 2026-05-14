@@ -1,119 +1,101 @@
 <?php
 
+error_reporting(E_ALL);
+
+ini_set('display_errors', 1);
+
 session_start();
 
 include "config.php";
+
 if($_SERVER["REQUEST_METHOD"] == "POST"){
 
     $username = $_POST["username"];
+
     $password = $_POST["password"];
 
-  
+    $sql = "SELECT * FROM users WHERE username='$username'";
 
-    $stmt = $conn->prepare("SELECT * FROM admin_users
-                        WHERE username=?");
+    $result = $conn->query($sql);
 
-$stmt->bind_param("s", $username);
+    if($result->num_rows > 0){
 
-$stmt->execute();
+        $user = $result->fetch_assoc();
 
-$result = $stmt->get_result();
+        if($password == $user['password']){
 
-if($result->num_rows > 0){
+            $_SESSION["admin"] = $username;
 
-    $user = $result->fetch_assoc();
+            header("Location: dashboard.php");
 
-    if(password_verify($password, $user["password"])){
+            exit();
 
-        $_SESSION["admin"] = $username;
+        }else{
 
-        if(isset($_POST["remember"])){
-
-            setcookie("admin_user",
-                      $username,
-                      time() + 3600);
+            echo "Wrong password!";
 
         }
 
-        header("Location: dashboard.php");
+    }else{
 
-    }
-    else{
-
-        echo "Wrong password";
+        echo "User not found!";
 
     }
 
 }
-else{
-
-    echo "User not found";
-
-}
-
-    $_SESSION["admin"] = $username;
-
-    if(isset($_POST["remember"])){
-
-        setcookie("admin_user",
-                  $username,
-                  time() + 3600);
-
-    }
-
-    header("Location: dashboard.php");
-
-}
-    else{
-
-        echo "Wrong username or password";
-
-    }
-
-
 
 ?>
 
 <!DOCTYPE html>
+
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <title>Admin Login</title>
 
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+
+<title>Admin Login</title>
+
+<link rel="stylesheet" href="style.css">
+
 </head>
 
 <body>
 
-    <section class="contact">
+<section class="contact">
 
-        <h2>Admin Login</h2>
+<h2>Admin Login</h2>
 
-        <form method="POST">
+<form method="POST">
 
-            <input type="text"
-                   name="username"
-                   placeholder="Username">
+<input type="text"
+       name="username"
+       placeholder="Username"
+       required>
 
-            <input type="password"
-                   name="password"
-                   placeholder="Password">
-            <label>
+<input type="password"
+       name="password"
+       placeholder="Password"
+       required>
 
-                <input type="checkbox" name="remember">
+<label>
 
-                Remember Me
+<input type="checkbox" name="remember">
 
-            </label>
-       
+Remember Me
 
+</label>
 
-            <button type="submit">Login</button>
+<button type="submit">
 
-        </form>
+Login
 
-    </section>
+</button>
+
+</form>
+
+</section>
 
 </body>
+
 </html>
