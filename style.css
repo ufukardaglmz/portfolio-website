@@ -1,3 +1,22 @@
+*{
+
+    margin: 0;
+
+    padding: 0;
+
+    box-sizing: border-box;
+
+}
+
+html, body{
+
+    overflow-x: hidden;
+
+    width: 100%;
+    padding-top: 100px;
+}
+
+
 html{
     scroll-behavior: smooth;
 }
@@ -26,13 +45,15 @@ nav{
 
     align-items: center;
 
-    padding: 20px 50px;
+    padding: 20px;
 
     background-color: #1565c0;
 
-    position: sticky;
+    position: fixed;
 
     top: 0;
+
+    width: 100%;
 
     z-index: 1000;
 
@@ -137,9 +158,9 @@ button:hover{
 
 .dark-mode{
 
-    background-color: #f4f7fb;
+    background-color: #0f172a;
 
-    color: #222;
+    color: white;
 
 }
 
@@ -284,12 +305,8 @@ nav{
 
 .about h2{
 
-    font-size: 45px;
-
-    margin-bottom: 25px;
-
-    color: #1565c0;
-
+    font-size: 45px !important;
+    color: #1565c0
 }
 
 .about p{
@@ -342,13 +359,11 @@ nav{
 
 .projects h2{
 
-    font-size: 45px;
-
-    margin-bottom: 50px;
-
+    font-size: 45px !important;
     color: #1565c0;
 
 }
+
 
 .project-container{
 
@@ -408,6 +423,7 @@ nav{
         gap: 20px;
 
         padding: 20px;
+        
 
     }
 
@@ -504,7 +520,7 @@ nav{
 
     border-radius: 10px;
 
-    font-size: 16px;
+    font-size: 20px;
 
     background-color: white;
 
@@ -554,41 +570,45 @@ nav{
 
 }
 
+
 .skills-container{
 
-    display: flex;
+    display: grid;
 
-    justify-content: center;
+    grid-template-columns: repeat(4, 1fr);
 
-    flex-wrap: wrap;
+    gap: 30px;
 
-    gap: 20px;
+    max-width: 1200px;
+
+    margin: 50px auto;
 
 }
-
 .skill-box{
 
     background-color: white;
 
-    color: #1565c0;
+    border-radius: 15px;
 
-    padding: 20px 40px;
-
-    border-radius: 12px;
-
-    transition: 0.3s;
-
-    font-size: 20px;
-
-    font-weight: bold;
+    padding: 25px;
 
     box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 15px;
 
 }
 
 .skill-box:hover{
 
-    transform: scale(1.08);
+    transform: translateY(-5px);
 
 }
 
@@ -862,7 +882,7 @@ footer{
 
 .edu-card,
 .exp-card{
-
+    margin-bottom: 40px;
     max-width: 800px;
 
     margin: auto;
@@ -1036,7 +1056,7 @@ nav ul{
 
 nav ul li a{
 
-    font-size: 14px;
+    font-size: 20px;
 
 
     }
@@ -1111,5 +1131,209 @@ nav ul li a{
         display: block;
 
     }
+
+}
+.success-message{
+
+    text-align: center;
+
+    background-color: #4caf50;
+
+    color: white;
+
+    padding: 15px;
+
+    border-radius: 10px;
+
+    width: 300px;
+
+    margin: 20px auto;
+
+    font-weight: bold;
+
+}
+
+
+
+.progress-bar{
+
+    width: 100%;
+
+    height: 10px;
+
+    background-color: #dcdcdc;
+
+    border-radius: 10px;
+
+    overflow: hidden;
+
+}
+
+.progress{
+
+    height: 100%;
+
+    background-color: #1565c0;
+
+}
+.html{
+    width: 90%;
+}
+
+.css{
+    width: 85%;
+}
+
+.js{
+    width: 75%;
+}
+
+.php{
+    width: 80%;
+}
+
+.mysql{
+    width: 75%;
+}
+
+.java{
+    width: 70%;
+}
+
+.cpp{
+    width: 65%;
+}
+
+.github{
+    width: 80%;
+}
+.skill-box span{
+
+    font-size: 28px;
+
+    font-weight: bold;
+
+    color: #1565c0;
+
+}
+
+
+.skill-box i{
+
+    font-size: 40px;
+
+    color: #1565c0;
+
+}
+.skill-box{
+
+    width: 240px;
+
+    min-height: 180px;
+
+}
+h2{
+
+    font-size: 65px;
+
+    margin-bottom: 50px;
+
+}
+p{
+
+    font-size: 24px;
+
+    line-height: 1.8;
+
+}
+.html{
+    width: 90%;
+}
+
+.css{
+    width: 85%;
+}
+
+.js{
+    width: 75%;
+}
+
+.php{
+    width: 80%;
+}
+
+.mysql{
+    width: 75%;
+}
+
+.java{
+    width: 70%;
+}
+
+.cpp{
+    width: 65%;
+}
+
+.github{
+    width: 85%;
+}
+@media(max-width: 900px){
+
+    .skills-container{
+
+        grid-template-columns: repeat(2, 1fr);
+
+    }
+
+}
+
+@media(max-width: 600px){
+
+    .skills-container{
+
+        grid-template-columns: 1fr;
+
+    }
+
+}
+nav ul li a{
+
+    transition: 0.3s;
+
+}
+
+nav ul li a.active{
+
+    color: #00bfff;
+
+}
+nav ul li a.active{
+
+    color: #00bfff;
+
+    font-weight: bold;
+
+}
+html, body{
+
+    margin: 0;
+
+    padding: 0;
+
+    overflow-x: hidden;
+
+}
+
+nav{
+
+    margin-bottom: 0;
+
+}
+
+.hero{
+
+    margin-top: 0;
+
+    padding-top: 120px;
 
 }

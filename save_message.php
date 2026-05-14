@@ -12,6 +12,6 @@ $stmt->bind_param("sss", $name, $email, $message);
 
 $stmt->execute();
 
-header("Location: index.php");
+header("Location: index.php?success=1");
 
 ?>

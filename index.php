@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Portfolio</title>
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
     <link rel="stylesheet" href="style.css?v=2">
 </head>
 <body>
@@ -27,7 +27,11 @@
         
     </ul>
 
-    <button id="themeButton">Dark Mode</button>
+<button id="themeButton">
+
+    Dark Mode
+
+</button>
 
 </nav>
 
@@ -52,13 +56,13 @@
         <h2>About Me</h2>
 
         
-            <p>
+   <p>
 
-    Third year Software Engineering student with a strong
-    interest in software development and emerging technologies.
+Third year Software Engineering student with a strong interest in software development, backend systems, and emerging technologies. Passionate about creating responsive and user-friendly web applications while continuously improving technical and problem-solving skills.
 
-    Eager to learn, adapt, and contribute effectively
-    to team projects.
+Experienced in working with technologies such as HTML, CSS, JavaScript, PHP, MySQL, Java, and C++. Interested in both frontend and backend development, with a focus on building clean, functional, and modern applications.
+
+A fast learner who adapts quickly to new environments and enjoys collaborating in team projects. Seeking opportunities to gain industry experience, contribute effectively to innovative projects, and further develop professional software engineering skills.
 
 </p>
         
@@ -68,7 +72,10 @@
 </section>
 <section class="education hidden"   id="education">
 
-    <h2>Education</h2>
+    <h2>
+    <i class="fa-solid fa-graduation-cap"></i>
+    Education
+</h2>
 
     <div class="edu-card">
 
@@ -84,7 +91,10 @@
 
 <section class="experience hidden" id="experience">
 
-    <h2>Experience</h2>
+    <h2>
+    <i class="fa-solid fa-briefcase"></i>
+    Experience
+</h2>
 
     <div class="exp-card">
 
@@ -113,12 +123,34 @@
         </p>
 
     </div>
+    <div class="exp-card">
+
+    <h3>Özdilek Park H&M – Part-Time Sales Assistant</h3>
+
+    <p>01/2024 - Present</p>
+
+    <p>
+        Assisted customers with purchases, providing friendly and efficient service.
+    </p>
+
+    <p>
+        Developed communication, teamwork, and problem-solving skills in a fast-paced retail environment.
+    </p>
+
+    <p>
+        Handled transactions and basic administrative tasks accurately and efficiently.
+    </p>
+
+    </div>
 
 
 </section>
 <section class="projects hidden " id="projects">
 
-    <h2>Projects</h2>
+    <h2>
+    <i class="fa-solid fa-code"></i>
+    Projects
+</h2>
 
     
 
@@ -129,26 +161,86 @@
 </section>
 <section class="skills hidden" id="skills">
 
-    <h2>My Skills</h2>
+    <h2>
+    <i class="fa-solid fa-laptop-code"></i>
+    My Skills
+</h2>
 
-    <div class="skills-container">
+<div class="skills-container">
 
-        <div class="skill-box">HTML5</div>
+    <div class="skill-box">
+        <i class="fa-brands fa-html5"></i>
+        <span>HTML5</span>
 
-        <div class="skill-box">CSS3</div>
+        <div class="progress-bar">
+            <div class="progress html"></div>
+        </div>
+    </div>
 
-        <div class="skill-box">JavaScript</div>
+    <div class="skill-box">
+        <i class="fa-brands fa-css3-alt"></i>
+        <span>CSS3</span>
 
-        <div class="skill-box">PHP</div>
+        <div class="progress-bar">
+            <div class="progress css"></div>
+        </div>
+    </div>
 
-        <div class="skill-box">MySQL</div>
+    <div class="skill-box">
+        <i class="fa-brands fa-js"></i>
+        <span>JavaScript</span>
 
-        <div class="skill-box">Java</div>
+        <div class="progress-bar">
+            <div class="progress js"></div>
+        </div>
+    </div>
 
-        <div class="skill-box">C++</div>
+    <div class="skill-box">
+        <i class="fa-brands fa-php"></i>
+        <span>PHP</span>
 
-        <div class="skill-box">GitHub</div>
+        <div class="progress-bar">
+            <div class="progress php"></div>
+        </div>
+    </div>
 
+    <div class="skill-box">
+        <i class="fa-solid fa-database"></i>
+        <span>MySQL</span>
+
+        <div class="progress-bar">
+            <div class="progress mysql"></div>
+        </div>
+    </div>
+
+    <div class="skill-box">
+        <i class="fa-brands fa-java"></i>
+        <span>Java</span>
+
+        <div class="progress-bar">
+            <div class="progress java"></div>
+        </div>
+    </div>
+
+    <div class="skill-box">
+        <i class="fa-solid fa-code"></i>
+        <span>C++</span>
+
+        <div class="progress-bar">
+            <div class="progress cpp"></div>
+        </div>
+    </div>
+
+    <div class="skill-box">
+        <i class="fa-brands fa-github"></i>
+        <span>GitHub</span>
+
+        <div class="progress-bar">
+            <div class="progress github"></div>
+        </div>
+    </div>
+
+</div>
     </div>
 
 </section>
@@ -158,6 +250,17 @@
     
 
 </section>
+<?php
+
+if(isset($_GET['success'])){
+
+    echo "<p class='success-message'>
+    Message sent successfully!
+    </p>";
+
+}
+
+?>
 <section class="contact hidden" id="contact">
 
     <h2>Contact Me</h2>
@@ -185,25 +288,64 @@
 
     <div class="social-links">
 
+    
     <a href="www.linkedin.com/in/ufuk
-arda-gülmez"
-       target="_blank">
-       LinkedIn
-    </a>
+arda-gülmez" target="_blank">
+    <i class="fa-brands fa-linkedin"></i>
+    LinkedIn
+</a>
 
-    <a href="https://instagram.com/ufukardaglmz"
-       target="_blank">
-       Instagram
-    </a>
+<a href="https://instagram.com/ufukardaglmz" target="_blank">
+    <i class="fa-brands fa-instagram"></i>
+    Instagram
+</a>
 
-    <a href="https://github.com/ufukardaglmz"
-       target="_blank">
-       GitHub
-    </a>
-
+<a href="https://github.com/ufukardaglmz" target="_blank">
+    <i class="fa-brands fa-github"></i>
+    GitHub
+</a>
     </div>
 
 </footer>
 <script src="script.js?v=2"></script>
+<script>
+
+const sections = document.querySelectorAll("section");
+
+const navLinks = document.querySelectorAll("nav ul li a");
+
+window.addEventListener("scroll", () => {
+
+    let current = "";
+
+    sections.forEach(section => {
+
+        const sectionTop = section.offsetTop - 150;
+
+        const sectionHeight = section.clientHeight;
+
+        if(window.scrollY >= sectionTop){
+
+            current = section.getAttribute("id");
+
+        }
+
+    });
+
+    navLinks.forEach(link => {
+
+        link.classList.remove("active");
+
+        if(link.getAttribute("href") === "#" + current){
+
+            link.classList.add("active");
+
+        }
+
+    });
+
+});
+
+</script>
 </body>
 </html>

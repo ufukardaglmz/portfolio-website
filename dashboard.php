@@ -81,6 +81,7 @@ while($row = $result->fetch_assoc()){
     <th>Name</th>
     <th>Email</th>
     <th>Message</th>
+    <th>Action</th>
 
 </tr>
 
@@ -103,6 +104,15 @@ while($row = $result->fetch_assoc()){
     <td><?php echo $row['email']; ?></td>
 
     <td><?php echo $row['message']; ?></td>
+    <td>
+
+    <a href="delete_message.php?id=<?php echo $row['id']; ?>">
+
+        Delete
+
+    </a>
+
+</td>
 
 </tr>
 
